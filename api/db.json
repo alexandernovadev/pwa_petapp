@@ -42,6 +42,17 @@
       "favs": [],
       "avatar": "https://gravatar.com/avatar/3d1f08e37fd3494fba62c37ab0f927dd",
       "email": "vamos@vamos.com"
+    },
+    {
+      "id": "5eb29790-2c37-11ee-9435-4531b2e10273",
+      "password": "$2b$10$.pRKFVNWsAAZjNx5yoHuUONk6/GfuHgB1DJsxdOieMDh5eK4ALaI6",
+      "favs": [
+        "9",
+        "2",
+        "8"
+      ],
+      "avatar": "https://gravatar.com/avatar/a8ad1680a13483e0f776c9f5f65948d0",
+      "email": "alexander.nova@ext.americar.tech"
     }
   ],
   "categories": [
@@ -157,21 +168,21 @@
       "categoryId": 1,
       "src": "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       "userId": 1,
-      "likes": 3
+      "likes": 4
     },
     {
       "id": 9,
       "categoryId": 2,
       "src": "https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       "userId": 1,
-      "likes": 0
+      "likes": 1
     },
     {
       "id": 8,
       "categoryId": 2,
       "src": "https://images.unsplash.com/photo-1447684808650-354ae64db5b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       "userId": 1,
-      "likes": 0
+      "likes": 1
     },
     {
       "id": 3,

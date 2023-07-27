@@ -4,6 +4,7 @@ import { App } from './App'
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
 import Context from './Context'
 import { setContext } from '@apollo/client/link/context'
+import { GQL_URL } from './config/serverurl'
 
 const authLink = setContext((_, { headers }) => {
   const token = window.sessionStorage.getItem('token')
@@ -15,7 +16,7 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3500/graphql'
+  uri: GQL_URL + '/graphql'
 })
 
 const client = new ApolloClient({

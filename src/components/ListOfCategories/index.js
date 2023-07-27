@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Category } from '../Category'
-
+import { GQL_URL } from '../../config/serverurl'
 import { List, Item } from './styles'
 
 // hook
@@ -11,9 +11,9 @@ function useCategoriesData () {
   useEffect(function () {
     setLoading(true)
     window
-      .fetch('http://localhost:3500/categories')
-      .then(res => res.json())
-      .then(response => {
+      .fetch(GQL_URL + '/categories')
+      .then((res) => res.json())
+      .then((response) => {
         setCategories(response)
         setLoading(false)
       })
@@ -28,7 +28,7 @@ export const ListOfCategories = () => {
 
   useEffect(
     function () {
-      const onScroll = e => {
+      const onScroll = (e) => {
         const newShowFixed = window.scrollY > 200
         showFixed !== newShowFixed && setShowFixed(newShowFixed)
       }
@@ -40,21 +40,19 @@ export const ListOfCategories = () => {
     [showFixed]
   )
 
-  const renderList = fixed => (
+  const renderList = (fixed) => (
     <List fixed={fixed}>
-      {loading
-        ? (
-          <Item key='loading'>
-            <Category />
+      {loading ? (
+        <Item key='loading'>
+          <Category />
+        </Item>
+      ) : (
+        categories.map((category) => (
+          <Item key={category.id}>
+            <Category {...category} path={`/pet/${category.id}`} />
           </Item>
-          )
-        : (
-            categories.map(category => (
-              <Item key={category.id}>
-                <Category {...category} path={`/pet/${category.id}`} />
-              </Item>
-            ))
-          )}
+        ))
+      )}
     </List>
   )
 

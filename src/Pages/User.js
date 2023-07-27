@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-
-const URL = 'http://localhost:3500/users'
+import { GQL_URL } from '../config/serverurl'
+const URL = GQL_URL + '/users'
 
 export const User = () => {
   const [users, setUsers] = useState([])
@@ -8,8 +8,8 @@ export const User = () => {
   useEffect(() => {
     const getUsers = () => {
       fetch(URL)
-        .then(res => res.json())
-        .then(resp => {
+        .then((res) => res.json())
+        .then((resp) => {
           setUsers(resp)
         })
     }
@@ -19,12 +19,14 @@ export const User = () => {
   return (
     <div style={{ padding: 12 }}>
       <h3>Usuarios</h3>
-      {users.map(user => (
+      {users.map((user) => (
         <div key={user.id} style={{ display: 'flex', padding: 12 }}>
           <img
             src={user.avatar}
             style={{ borderRadius: '30px', padding: 8 }}
-            alt='' width={60} height={60}
+            alt=""
+            width={60}
+            height={60}
           />
           <h5>{user.email}</h5>
         </div>
